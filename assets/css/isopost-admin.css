@@ -1,0 +1,34 @@
+
+.isopost-item{
+	margin-top:20px;
+}
+
+.isopost-item .isopost-label{
+    color: #007cb0;
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#isopost_selterms label{
+	margin-right:10px;
+}
+
+.isopost_loader{
+    display: none;
+    height: 16px;
+    left: 150px;
+    position: absolute;
+    top: -46px;
+    width: 16px;
+}
+
+.isopost-textsc{
+	margin-top: 10px;
+}
+
+body.post-type-isopost-scode #side-sortables #misc-publishing-actions #visibility,
+body.post-type-isopost-scode #side-sortables #misc-publishing-actions .misc-pub-curtime{
+	display:none;
+}
