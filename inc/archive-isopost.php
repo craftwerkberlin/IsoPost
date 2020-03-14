@@ -9,19 +9,19 @@
 				<header class="page-header">
 					<div class="card mb-4 bg-light border-0">
 						<div class="card-body">	
-							<?php
-								the_archive_title( '<h1 class="page-title mb-0">', '</h1>' );
-								the_archive_description( '<div class="archive-description">', '</div>' );
-								?>								
+							<h1 class="card-title"><?php single_cat_title(); ?></h1>
+							<!-- Category description -->
+							<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>					
 						</div>
 					</div>
 				</header>
 				<!-- .page-header -->
 				<!-- Grid Layout -->
-				<div class="card-deck">
+				<div class="row">
 					<?php if (have_posts() ) : ?>
 					<?php while (have_posts() ) : the_post(); ?>
-					<div class="card">
+					<div class="col-md-6 col-lg-4 mb-4">
+					<div class="card h-100">
 						<!-- Featured Image-->
 						<?php if (has_post_thumbnail() )
 							echo '<div class="card-img-top">' . get_the_post_thumbnail(null, 'medium') . '</div>';
@@ -34,7 +34,7 @@
 									$i = 0;
 									foreach( get_the_category() as $category ) {
 									    if ( 0 < $i ) $thelist .= ' ';
-									    $thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="badge badge-secondary">' . $category->name.'</a>';
+									    $thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="badge badge-primary">' . $category->name.'</a>';
 									    $i++;
 									}
 									echo $thelist;
@@ -44,7 +44,7 @@
 									$terms = get_the_terms( $post->ID, 'isopost_categories' );
 										if ($terms && ! is_wp_error($terms)): ?>
 								<?php foreach($terms as $term): ?>
-								<a href="<?php echo get_term_link( $term->slug, 'isopost_categories'); ?>" rel="tag" class="badge badge-secondary"><?php echo $term->name; ?></a>
+								<a href="<?php echo get_term_link( $term->slug, 'isopost_categories'); ?>" rel="tag" class="badge badge-primary"><?php echo $term->name; ?></a>
 								<?php endforeach; ?>
 								<?php endif; ?>
 							</div>
@@ -56,7 +56,7 @@
 							</h2>
 							<!-- Meta -->
 							<?php if ( 'post' === get_post_type() ) : ?>
-							<small class="text-secondary mb-2">
+							<small class="text-muted mb-2">
 							<?php
 								bootscore_date();
 								bootscore_author();
@@ -72,6 +72,7 @@
 							<!-- Tags -->
 							<?php bootscore_tags(); ?>
 						</div>
+					</div>
 					</div>
 					<?php endwhile; ?>
 					<?php endif; ?>

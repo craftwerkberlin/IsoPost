@@ -52,7 +52,7 @@ function isopost_shortcode_func( $atts ) {
 				<!-- .isopost-filter -->
 				<div class="isopost-filter justify-content-center d-flex">
 					<div class="filter isopostfilters">
-						<a class="active btn btn-outline-primary" href="JavaScript:void(0);" data-filter="*"><?php _e('All','isopost'); ?></a>
+						<a class="active btn btn-outline-primary" href="JavaScript:void(0);" data-filter="*"><?php _e('All','bootscore'); ?></a>
 						<?php
 						$filter_terms = unserialize($_isopost_taxterms);
 						foreach( $filter_terms as $term_id ) 

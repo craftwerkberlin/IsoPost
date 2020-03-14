@@ -48,7 +48,7 @@
 	<!-- .isopost-filter -->
 	<div class="isopost-filter justify-content-center d-flex">
 		<div class="filter isopostfilters">
-			<a class="active btn btn-outline-primary" href="JavaScript:void(0);" data-filter="*"><?php _e('All','isopost'); ?></a>
+			<a class="active btn btn-outline-primary" href="JavaScript:void(0);" data-filter="*"><?php _e('All','bootscore'); ?></a>
 			<?php
 				$filter_terms = unserialize($_isopost_taxterms);
 				foreach( $filter_terms as $term_id ) 
@@ -82,9 +82,7 @@
 		<div class="isopost-item item <?php echo $data_type; $data_type = null; ?> isopost-grid <?php echo $_isopost_st_dcol.' '.$_isopost_st_tcol.' '.$_isopost_st_pcol; ?>">
 			<div class="card equal-height">
 				<!-- Featured Image-->
-				<?php if (has_post_thumbnail() )
-					echo '<div class="card-img-top">' . get_the_post_thumbnail(null, 'medium') . '</div>';
-					?>  
+				<?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
 				<div class="card-body d-flex flex-column">
 					<div class="mb-2">
 						<!-- Category Badge -->
@@ -116,7 +114,7 @@
 					</h3>
 					<!-- Meta -->
 					<?php if ( 'post' === get_post_type() ) : ?>
-					<small class="text-secondary mb-2">
+					<small class="text-muted mb-2">
 					<?php
 						bootscore_date();
 						bootscore_author();
@@ -127,7 +125,7 @@
 					<?php endif; ?>	
 					<!-- Excerpt & Read more -->
 					<div class="card-text mt-auto">
-						<?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more', 'isopost'); ?></a>
+						<?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more', 'bootscore'); ?></a>
 					</div>
 					<!-- Tags -->
 					<?php bootscore_tags(); ?>
