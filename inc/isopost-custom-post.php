@@ -4,7 +4,7 @@
 // Custom Post types
 function isopost_register() {
     $labels = array(
-        'name' => _x('IsoPost', 'post type general name'),
+        'name' => _x('bS IsoPost', 'post type general name'),
         'singular_name' => _x('IsoPost Item', 'post type singular name'),
         'add_new' => _x('Add New', 'isopost item'),
         'add_new_item' => __('Add New IsoPost Item'),

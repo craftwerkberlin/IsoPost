@@ -104,7 +104,7 @@ function isopost_shortcode_func( $atts ) {
 				
 										<!-- Read more -->
 										<div class="readmore">
-											<a class="btn btn-outline-light" href="<?php the_permalink(); ?>"><?php _e('Read more', 'isopost'); ?> »</a>
+											<a class="btn btn-outline-light" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'isopost'); ?> »</a>
 									</div>
 									</div>
 			

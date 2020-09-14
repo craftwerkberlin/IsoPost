@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name:  IsoPost
+Plugin Name:  bS IsoPost
 Plugin URI: https://bootscore.me/plugins/isopost/
 Version:      1.0.1
 Author:       craftwerk - Bastian Kreiter
